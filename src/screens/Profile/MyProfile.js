@@ -39,7 +39,11 @@ const MyProfile = () => {
           />
         </View>
         <View
-          style={{ justifyContent: "center", alignItems: "flex-end", gap: 20 }}
+          style={{
+            justifyContent: "center",
+            alignItems: "flex-start",
+            gap: 20,
+          }}
         >
           <Text
             style={{

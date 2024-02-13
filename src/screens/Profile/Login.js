@@ -6,11 +6,12 @@ import {
   TextInput,
   View,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import ROUTES from "../../navigation";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "../../api/auth";
+import UserContext from "../../context/UserContext";
 
 const Login = () => {
   const navigation = useNavigation();
@@ -35,7 +36,7 @@ const Login = () => {
       <TextInput
         placeholder="Please enter your UserName"
         onChangeText={(text) => {
-          setUserInfo({ ...userInfo, userName: text });
+          setUserInfo({ ...userInfo, phoneNumber: text });
         }}
       />
       <Text>Password</Text>

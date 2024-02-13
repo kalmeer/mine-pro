@@ -5,14 +5,28 @@ import { StyleSheet, Text, View } from "react-native";
 import MainNavigation from "./src/navigation/MainNavigation";
 import TripCard from "./src/component/TripCard";
 import AuthNavigation from "./src/navigation/Auth/AuthNavigation";
+import { useEffect, useState } from "react";
+import UserContext from "./src/context/UserContext";
 
 export default function App() {
   //if there is no token  <AuthNavigation /> other wise
+  const [user, setUser] = useState(false);
+  const checkToken = async () => {
+    const token = await getToken();
+    if (token) {
+      setUser(true);
+    }
+  };
+  useEffect(() => {
+    checkToken();
+  }, []);
   return (
     <QueryClientProvider client={new QueryClient()}>
-      <NavigationContainer>
-        <MainNavigation />
-      </NavigationContainer>
+      <UserContext.Provider value={[user, setUser]}>
+        <NavigationContainer>
+          {user ? <MainNavigation /> : <AuthNavigation />}
+        </NavigationContainer>
+      </UserContext.Provider>
     </QueryClientProvider>
   );
 }

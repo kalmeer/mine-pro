@@ -63,8 +63,9 @@ const Home = () => {
           <View style={{ justifyContent: "flex-end", alignItems: "flex-end" }}>
             <Button
               title="Add trip"
+              color={"gray"}
+              style={{ backgroundColor: "red" }}
               onPress={() => alert("Add trip function")}
-              style={{ backgroundColor: "white" }}
             />
           </View>
         </ScrollView>
