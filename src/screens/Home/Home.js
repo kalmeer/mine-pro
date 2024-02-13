@@ -11,22 +11,22 @@ const Home = () => {
     queryKey: ["trip"],
     queryFn: () => getAllItrip(),
   });
-
+  console.log(data);
   const navigation = useNavigation();
-  // const items = data?.map((trip) => {
-  //   return (
-  //     <TripCard
-  //       image={trip.image}
-  //       name={trip.name}
-  //       onPress={() => {
-  //         navigation.navigate(ROUTES.HOME_NAVIGATION.CARD_DETAIL, {
-  //           _id: trip._id,
-  //           name: trip.name,
-  //         });
-  //       }}
-  //     />
-  //   );
-  // });
+  const items = data?.map((trip) => {
+    return (
+      <TripCard
+        image={trip.image}
+        title={trip.title}
+        description={trip.description}
+        onPress={() => {
+          navigation.navigate(ROUTES.HOME_NAVIGATION.TRIP_DETAIL, {
+            _id: trip._id,
+          });
+        }}
+      />
+    );
+  });
   return (
     <View style={{ flex: 1, gap: 20 }}>
       <View
@@ -63,7 +63,7 @@ const Home = () => {
           <View style={{ justifyContent: "flex-end", alignItems: "flex-end" }}>
             <Button
               title="Add trip"
-              color={"gray"}
+              color={"black"}
               style={{ backgroundColor: "red" }}
               onPress={() => alert("Add trip function")}
             />
@@ -84,12 +84,7 @@ const Home = () => {
             gap: 20,
           }}
         >
-          <TripCard
-            onPress={() => {
-              navigation.navigate(ROUTES.HOME_NAVIGATION.TRIP_DETAIL);
-            }}
-          />
-          {/* {items} */}
+          {items}
         </ScrollView>
       </View>
     </View>

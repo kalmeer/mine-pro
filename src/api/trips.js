@@ -1,13 +1,13 @@
 import { instance } from ".";
 
 const getAllItrip = async () => {
-  const res = await instance.get("/mini-project/api/items");
+  const res = await instance.get("/trip/");
 
   return res.data;
 };
 
 const getTripById = async (_id) => {
-  const res = await instance.get(`/mini-project/api/items/${_id}`);
+  const res = await instance.get(`/trip/${_id}`);
   return res.data;
 };
 export { getAllItrip, getTripById };

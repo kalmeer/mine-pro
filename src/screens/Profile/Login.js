@@ -36,7 +36,7 @@ const Login = () => {
       <TextInput
         placeholder="Please enter your UserName"
         onChangeText={(text) => {
-          setUserInfo({ ...userInfo, phoneNumber: text });
+          setUserInfo({ ...userInfo, username: text });
         }}
       />
       <Text>Password</Text>
@@ -46,8 +46,8 @@ const Login = () => {
           setUserInfo({ ...userInfo, password: text });
         }}
       />
-      {error && <Text>{JSON.stringify(error.response.data)}</Text>}
-      <Button title="login" onPress={mutate} />
+      {error && <Text>{JSON.stringify(error?.response?.data)}</Text>}
+      <Button title="login" onPress={() => mutate()} />
 
       <Pressable
         onPress={() => {

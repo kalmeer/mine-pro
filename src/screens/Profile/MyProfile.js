@@ -1,15 +1,22 @@
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  Button,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React, { useContext } from "react";
 import download from "../../image/download.jpeg";
 import TripCard from "../../component/TripCard";
 import UserContext from "../../context/UserContext";
 import { removeToken } from "../../api/storage";
 const MyProfile = () => {
-  // const [user, setUser] = useContext(UserContext);
-  // const logout = () => {
-  //   removeToken();
-  //   setUser(false);
-  // };
+  const [user, setUser] = useContext(UserContext);
+  const logout = () => {
+    removeToken();
+    setUser(false);
+  };
   //data.map?
   return (
     <View
@@ -70,12 +77,12 @@ const MyProfile = () => {
           <TripCard />
         </ScrollView>
       </View>
-      {/* <Button
+      <Button
         title="Logout"
         onPress={() => {
           logout();
         }}
-      /> */}
+      />
     </View>
   );
 };

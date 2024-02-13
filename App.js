@@ -7,6 +7,7 @@ import TripCard from "./src/component/TripCard";
 import AuthNavigation from "./src/navigation/Auth/AuthNavigation";
 import { useEffect, useState } from "react";
 import UserContext from "./src/context/UserContext";
+import { getToken } from "./src/api/storage";
 
 export default function App() {
   //if there is no token  <AuthNavigation /> other wise
