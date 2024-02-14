@@ -7,7 +7,17 @@ import CreateTrip from "../../component/CreateTrip";
 const Stack = createStackNavigator();
 const HomeNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#007BFF",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
       <Stack.Screen name={ROUTES.HOME_NAVIGATION.HOME} component={Home} />
       <Stack.Screen
         name={ROUTES.HOME_NAVIGATION.TRIP_DETAIL}

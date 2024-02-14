@@ -1,18 +1,18 @@
 const ROUTES = {
   AUTH_NAVIGATION: {
     INDEX: "Auth navigation",
-    LOGIN: "login",
-    SIGNUP: "signup",
+    LOGIN: "Login",
+    SIGNUP: "Signup",
   },
   HOME_NAVIGATION: {
     INDEX: "Home navigation",
-    HOME: "home",
-    TRIP_DETAIL: "trip detail",
-    CREATE_TRIP: "create trip",
+    HOME: "Home",
+    TRIP_DETAIL: "Trip details",
+    CREATE_TRIP: "Create trip",
   },
   PROFILE_NAVIGATION: {
     INDEX: "My Profile",
-    MY_PROFILE: "profile",
+    MY_PROFILE: "Profile",
   },
 };
 

@@ -40,39 +40,6 @@ const CreateTrip = () => {
   };
 
   return (
-    // <View
-    //   style={{
-    //     flex: 1,
-    //     backgroundColor: "white",
-    //     borderRadius: 20,
-    //     overflow: "hidden",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //   }}
-    // >
-    //   <View style={{ flex: 1, justifyContent: "center", alignItems: "center", }}>
-    //     <Text>bio</Text>
-    //     <TextInput
-    //       placeholder="Title"
-    //       onChangeText={(text) => {
-    //         setTripInfo({ ...tripInfo, title: text });
-    //       }}
-    //     />
-    //     <Text>bio</Text>
-    //     <TextInput
-    //       placeholder="Description of the trip"
-    //       onChangeText={(text) => {
-    //         setTripInfo({ ...tripInfo, description: text });
-    //       }}
-    //     />
-    //     <Button
-    //       title="Add trip"
-    //       color={"black"}
-    //       style={{ backgroundColor: "red" }}
-    //       onPress={() => alert("Add trip function")}
-    //     />
-    //   </View>
-    // </View>
     <View
       style={{
         flex: 1,
@@ -83,10 +50,17 @@ const CreateTrip = () => {
         alignItems: "center",
       }}
     >
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text style={{ fontSize: 24, fontWeight: "bold", marginBottom: 20 }}>
+      <View style={{ width: "100%" }}>
+        <Text
+          style={{
+            fontSize: 24,
+            fontWeight: "bold",
+            marginBottom: 20,
+          }}
+        >
           Title
         </Text>
+
         <TextInput
           style={{
             height: 40,
@@ -107,36 +81,48 @@ const CreateTrip = () => {
         </Text>
         <TextInput
           style={{
-            height: 40,
+            height: 100,
             borderColor: "gray",
             borderWidth: 1,
             borderRadius: 10,
             width: "100%",
             marginBottom: 20,
             paddingLeft: 10,
+            textAlignVertical: "top",
           }}
           placeholder="Description of the trip"
+          multiline
+          numberOfLines={4}
           onChangeText={(text) => {
             setTripInfo({ ...tripInfo, description: text });
           }}
         />
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
-          <Button title="Pick an image from camera roll" onPress={pickImage} />
-          {image && (
-            <Image
-              source={{ uri: image }}
-              style={{ width: 200, height: 200 }}
-            />
-          )}
-        </View>
       </View>
-      <Button
-        title="Add trip"
-        style={{ backgroundColor: "blue", padding: 10, borderRadius: 10 }}
-        onPress={mutate}
-      />
+      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <Button title="Pick an image from camera roll" onPress={pickImage} />
+        {image && (
+          <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />
+        )}
+      </View>
+      <View
+        style={{
+          width: "100%",
+          height: 50,
+          borderRadius: 15,
+        }}
+      >
+        <Button
+          title="Add trip"
+          style={{
+            padding: 10,
+            borderRadius: 15,
+            width: "100%",
+            alignItems: "center",
+            marginTop: 10,
+          }}
+          onPress={mutate}
+        />
+      </View>
     </View>
   );
 };

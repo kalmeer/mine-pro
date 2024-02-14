@@ -27,64 +27,122 @@ const Home = () => {
   ));
 
   return (
-    <View style={{ flex: 1, gap: 20 }}>
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "space-between",
+        padding: 30,
+        marginTop: 25,
+      }}
+    >
       <View
         style={{
-          backgroundColor: "gray",
+          backgroundColor: "#007BFF",
           justifyContent: "center",
           alignItems: "center",
-          height: 50,
+          height: 70,
           borderRadius: 5,
-          gap: 20,
+          flexDirection: "row",
+          padding: 10,
         }}
       >
-        <ScrollView
-          horizontal
-          contentContainerStyle={{
-            justifyContent: "center",
-            alignItems: "center",
-            gap: 10,
-          }}
-        >
-          <View style={{ width: 50, height: 30 }}>
-            <Text
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                fontSize: 25,
-                fontWeight: "bold",
-                color: "white",
-              }}
-            ></Text>
-          </View>
-          <View style={{ justifyContent: "flex-end", alignItems: "flex-end" }}>
-            <Button
-              title="Add trip"
-              color={"black"}
-              style={{ backgroundColor: "red" }}
-              onPress={() =>
-                navigation.navigate(ROUTES.HOME_NAVIGATION.CREATE_TRIP)
-              }
-            />
-          </View>
-        </ScrollView>
+        <View style={{ flex: 1, alignItems: "center" }}>
+          <Text
+            style={{
+              fontSize: 25,
+              fontWeight: "bold",
+              color: "white",
+            }}
+          >
+            Title
+          </Text>
+        </View>
+        <View style={{ flex: 1, alignItems: "flex-end" }}>
+          <Button
+            title="Add trip"
+            color={"white"}
+            onPress={() =>
+              navigation.navigate(ROUTES.HOME_NAVIGATION.CREATE_TRIP)
+            }
+          />
+        </View>
       </View>
       <View
         style={{
-          // backgroundColor: "green",
-          flex: 85,
-          gap: 20,
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
         <ScrollView
           contentContainerStyle={{
+            flexGrow: 1,
             justifyContent: "center",
             alignItems: "center",
-            gap: 20,
           }}
-        ></ScrollView>
+        >
+          {/* Content here */}
+        </ScrollView>
       </View>
     </View>
+    // <View style={{ flex: 1, gap: 20 }}>
+    //   <View
+    //     style={{
+    //       backgroundColor: "gray",
+    //       justifyContent: "center",
+    //       alignItems: "center",
+    //       height: 50,
+    //       borderRadius: 5,
+    //       gap: 20,
+    //     }}
+    //   >
+    //     <ScrollView
+    //       horizontal
+    //       contentContainerStyle={{
+    //         justifyContent: "center",
+    //         alignItems: "center",
+    //         gap: 10,
+    //       }}
+    //     >
+    //       <View style={{ width: 50, height: 30 }}>
+    //         <Text
+    //           style={{
+    //             justifyContent: "center",
+    //             alignItems: "center",
+    //             fontSize: 25,
+    //             fontWeight: "bold",
+    //             color: "white",
+    //           }}
+    //         ></Text>
+    //       </View>
+    //       <View style={{ justifyContent: "flex-end", alignItems: "flex-end" }}>
+    //         <Button
+    //           title="Add trip"
+    //           color={"black"}
+    //           style={{ backgroundColor: "red" }}
+    //           onPress={() =>
+    //             navigation.navigate(ROUTES.HOME_NAVIGATION.CREATE_TRIP)
+    //           }
+    //         />
+    //       </View>
+    //     </ScrollView>
+    //   </View>
+    //   <View
+    //     style={{
+    //       // backgroundColor: "green",
+    //       flex: 85,
+    //       gap: 20,
+    //     }}
+    //   >
+    //     <ScrollView
+    //       contentContainerStyle={{
+    //         justifyContent: "center",
+    //         alignItems: "center",
+    //         gap: 20,
+    //       }}
+    //     ></ScrollView>
+    //   </View>
+    // </View>
   );
 };
 

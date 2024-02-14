@@ -8,12 +8,22 @@ const Stack = createStackNavigator();
 
 const AuthNavigation = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: "#007BFF",
+        },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
+      }}
+    >
       <Stack.Screen
         name={ROUTES.PROFILE_NAVIGATION.MY_PROFILE}
         component={MyProfile}
       />
-      {/* <Stack.Screen name={ROUTES.AUTH_NAVIGATION.SIGNUP} component={Signup} /> */}
+      {/* <Stack.Screen name={ROUTES.AUTH_NAVIGATION.SIGNUP} component={Signup} options={{ title: 'Sign Up' }} /> */}
     </Stack.Navigator>
   );
 };
