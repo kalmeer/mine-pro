@@ -1,8 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
 import ROUTES from ".";
 import HomeNavigation from "./home/HomeNavigation";
 import ProfileNavigation from "./profile/ProfileNavigation";
+
 const Tap = createBottomTabNavigator();
 
 const MainNavigation = () => {

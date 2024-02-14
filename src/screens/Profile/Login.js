@@ -17,6 +17,7 @@ const Login = () => {
   const navigation = useNavigation();
   const [userInfo, setUserInfo] = useState({});
   const [user, setUser] = useContext(UserContext);
+
   const { mutate, error } = useMutation({
     mutationKey: ["login"],
     mutationFn: () => login(userInfo),
